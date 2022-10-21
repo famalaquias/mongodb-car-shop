@@ -1,3 +1,4 @@
+// Requisito 02:
 import { z } from 'zod';
 
 const VehicleZodSchema = z.object({
