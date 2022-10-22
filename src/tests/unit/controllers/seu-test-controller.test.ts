@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { Request, Response } from 'express';
 import Car from '../../../models/Car';
-import CarServices from '../../../services/Car.services';
-import CarControllers from '../../../controllers/Car.controller';
+import CarServices from '../../../services/CarService';
+import CarControllers from '../../../controllers/CarController';
 import { carMock, carMockWithId } from '../../unit/mocks/cars.mock';
 
 describe('Car Controller', () => {

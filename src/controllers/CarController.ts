@@ -15,11 +15,11 @@ export default class CarsController {
   }
 
   // Requisito 08:
-  public async read(
-    req: Request,
-    res: Response<ICar[]>,
-  ) {
-    const result = await this._service.read();
-    return res.status(201).json(result);
-  }
+  // public async read(
+  //   req: Request,
+  //   res: Response<ICar[]>,
+  // ) {
+  //   const result = await this._service.read();
+  //   return res.status(201).json(result);
+  // }
 }

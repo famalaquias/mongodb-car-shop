@@ -2,7 +2,7 @@ import { ICar, CarZodSchema } from '../interfaces/ICar';
 import { IModel } from '../interfaces/IModel';
 import IService from '../interfaces/IService';
 
-export default class CarServices implements IService<ICar> {
+export default class CarService implements IService<ICar> {
   constructor(private _model: IModel<ICar>) { }
 
   // Requisito 04:
@@ -16,7 +16,7 @@ export default class CarServices implements IService<ICar> {
   }
 
   // Requisito 08:
-  public async read(): Promise<ICar[]> {
-    return this._model.read();
-  }
+  // public async read(): Promise<ICar[]> {
+  //   return this._model.read();
+  // }
 }

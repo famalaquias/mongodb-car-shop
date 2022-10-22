@@ -5,7 +5,7 @@ import * as sinon from 'sinon';
 import { ZodError } from 'zod';
 import { ErrorTypes } from '../../../errors/catalog';
 import Car from '../../../models/Car';
-import CarServices from '../../../services/Car.services';
+import CarServices from '../../../services/CarService';
 import { carMock, carMockWithId } from '../../unit/mocks/cars.mock';
 
 describe('Car Service', () => {
