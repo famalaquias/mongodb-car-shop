@@ -12,6 +12,7 @@ const carMongooseSchema = new Schema<ICar>(
     doorsQty: Number, 
     seatsQty: Number,
   },
+  { versionKey: false }, // solução proposta pelo colega de turma: Rafael Moraes.
 );
 
 export default class Car extends MongoModel<ICar> {
