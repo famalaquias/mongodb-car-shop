@@ -14,4 +14,9 @@ export default class MotorcycleService implements IService<IMotorcycle> {
     }
     return this._model.create(parsed.data);
   }
+
+  // Requisito 20:
+  public async read(): Promise<IMotorcycle[]> {
+    return this._model.read();
+  }
 }

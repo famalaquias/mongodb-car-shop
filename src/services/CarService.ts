@@ -16,7 +16,7 @@ export default class CarService implements IService<ICar> {
   }
 
   // Requisito 08:
-  // public async read(): Promise<ICar[]> {
-  //   return this._model.read();
-  // }
+  public async read(): Promise<ICar[]> {
+    return this._model.read();
+  }
 }
