@@ -10,9 +10,8 @@ export default class MotorcycleService implements IService<IMotorcycle> {
   public async create(obj: unknown): Promise<IMotorcycle> {
     const parsed = MotorcycleZodSchema.safeParse(obj);
 
-    if (!parsed.success) {
-      throw parsed.error;
-    }
+    if (!parsed.success) throw parsed.error;
+
     return this._model.create(parsed.data);
   }
 
@@ -25,9 +24,7 @@ export default class MotorcycleService implements IService<IMotorcycle> {
   public async readOne(_id: string): Promise<IMotorcycle> {
     const result = await this._model.readOne(_id);
 
-    if (!result) {
-      throw new Error(ErrorTypes.EntityNotFound);
-    }
+    if (!result) throw new Error(ErrorTypes.EntityNotFound);
 
     return result;
   }
@@ -36,14 +33,11 @@ export default class MotorcycleService implements IService<IMotorcycle> {
   public async update(_id: string, obj:unknown): Promise<IMotorcycle> {
     const parsedUpdate = MotorcycleZodSchema.safeParse(obj);
 
-    if (!parsedUpdate.success) {
-      throw parsedUpdate.error;
-    }
+    if (!parsedUpdate.success) throw parsedUpdate.error;
 
     const result = await this._model.update(_id, parsedUpdate.data);
-    if (!result) {
-      throw new Error(ErrorTypes.EntityNotFound);
-    }
+
+    if (!result) throw new Error(ErrorTypes.EntityNotFound);
 
     return result;
   }

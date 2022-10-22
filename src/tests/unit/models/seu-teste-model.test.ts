@@ -12,6 +12,7 @@ describe('Car Model', () => {
 		sinon.stub(Model, 'create').resolves(carMockWithId);
 		sinon.stub(Model, 'find').resolves([carMockWithId]);
 		sinon.stub(Model, 'findOne').resolves(carMockWithId);
+		sinon.stub(Model, 'findByIdAndUpdate').resolves(carMockWithId);
 	});
 
 	after(() => {
@@ -45,6 +46,11 @@ describe('Car Model', () => {
 			expect(error.message).to.be.eq('InvalidMongoId');
 		}
 		});
+
+		// it('_id update', async () => {
+		// 	const carUpdate = await carModel.update(carId, carMockWithId);
+		// 	expect(carUpdate).to.be.eq(carMockWithId);
+		// });
 	});
 });
 // import * as sinon from 'sinon';

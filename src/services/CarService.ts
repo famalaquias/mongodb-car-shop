@@ -25,9 +25,7 @@ export default class CarService implements IService<ICar> {
   public async readOne(_id: string): Promise<ICar> {
     const result = await this._model.readOne(_id);
 
-    if (!result) {
-      throw new Error(ErrorTypes.EntityNotFound);
-    }
+    if (!result) throw new Error(ErrorTypes.EntityNotFound);
 
     return result;
   }
@@ -36,14 +34,10 @@ export default class CarService implements IService<ICar> {
   public async update(_id: string, obj:unknown): Promise<ICar> {
     const parsedUpdate = CarZodSchema.safeParse(obj);
 
-    if (!parsedUpdate.success) {
-      throw parsedUpdate.error;
-    }
+    if (!parsedUpdate.success) throw parsedUpdate.error;
 
     const result = await this._model.update(_id, parsedUpdate.data);
-    if (!result) {
-      throw new Error(ErrorTypes.EntityNotFound);
-    }
+    if (!result) throw new Error(ErrorTypes.EntityNotFound);
 
     return result;
   }
