@@ -11,8 +11,6 @@ export default class CarsController {
     res: Response<ICar>,
     next: NextFunction,
   ) {
-    // const result = await this._service.create(req.body);
-    // return res.status(201).json(result);
     try {
       const result = await this._service.create(req.body);
       return res.status(201).json(result);
@@ -27,11 +25,9 @@ export default class CarsController {
     res: Response<ICar[]>,
     next: NextFunction,
   ) {
-    // const result = await this._service.read();
-    // return res.status(201).json(result);
     try {
       const result = await this._service.read();
-      return res.status(201).json(result);
+      return res.status(200).json(result);
     } catch (error) {
       next(error);
     }
