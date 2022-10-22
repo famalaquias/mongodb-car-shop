@@ -19,7 +19,7 @@ export const errorCatalog: ErrorCatalog = {
   },
 
   InvalidMongoId: {
-    message: 'Id must be a 24 characters hexadecimal',
+    message: 'Id must have 24 hexadecimal characters',
     httpStatus: 400,
   },
 };

@@ -11,6 +11,7 @@ describe('Car Model', () => {
   before(() => {
 		sinon.stub(Model, 'create').resolves(carMockWithId);
 		sinon.stub(Model, 'find').resolves([carMockWithId]);
+		sinon.stub(Model, 'findOne').resolves(carMockWithId);
 	});
 
 	after(() => {
@@ -28,6 +29,21 @@ describe('Car Model', () => {
 		it('Successfuly changed', async () => {
 			const carChanged = await carModel.read();
 			expect(carChanged).to.be.deep.equal([carMockWithId]);
+		});
+	});
+
+	describe('Searching a Car', () => {
+		it('successfully found', async () => {
+			const carFound = await carModel.readOne('62cf1fc6498565d94eba52cd');
+			expect(carFound).to.be.deep.equal(carMockWithId);
+		});
+		
+		it('_id not found', async () => {
+			try {
+				await carModel.readOne('123ERRADO');
+		} catch (error: any) {
+			expect(error.message).to.be.eq('InvalidMongoId');
+		}
 		});
 	});
 });

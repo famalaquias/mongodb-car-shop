@@ -18,6 +18,7 @@ export default abstract class MongoModel<T> implements IModel<T> {
     return this._model.find();
   }
 
+  // Requisito 09:
   public async readOne(_id:string):Promise<T | null> {
     if (!isValidObjectId(_id)) throw new Error('InvalidMongoId');
     return this._model.findOne({ _id });
