@@ -31,4 +31,13 @@ export default class MotorcycleController {
     const result = await this._service.readOne(req.params.id);
     return res.status(200).json(result);
   }
+
+  // Requisito 22:
+  public async update(
+    req: Request,
+    res: Response<IMotorcycle>,
+  ) {
+    const result = await this._service.update(req.params.id, req.body);
+    return res.status(200).json(result);
+  }
 }

@@ -46,4 +46,18 @@ export default class CarsController {
       next(error);
     }
   }
+
+  // Requisito 13:
+  public async update(
+    req: Request,
+    res: Response<ICar>,
+    next: NextFunction,
+  ) {
+    try {
+      const result = await this._service.update(req.params.id, req.body);
+      return res.status(200).json(result);
+    } catch (error) {
+      next(error);
+    }
+  }
 }

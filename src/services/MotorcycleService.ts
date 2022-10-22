@@ -31,4 +31,20 @@ export default class MotorcycleService implements IService<IMotorcycle> {
 
     return result;
   }
+
+  // Requisito 22:
+  public async update(_id: string, obj:unknown): Promise<IMotorcycle> {
+    const parsedUpdate = MotorcycleZodSchema.safeParse(obj);
+
+    if (!parsedUpdate.success) {
+      throw parsedUpdate.error;
+    }
+
+    const result = await this._model.update(_id, parsedUpdate.data);
+    if (!result) {
+      throw new Error(ErrorTypes.EntityNotFound);
+    }
+
+    return result;
+  }
 }
