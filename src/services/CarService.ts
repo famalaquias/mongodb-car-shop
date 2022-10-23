@@ -46,7 +46,7 @@ export default class CarService implements IService<ICar> {
   public async delete(_id: string): Promise<ICar> {
     const result = await this._model.delete(_id);
     
-    if (!result) throw new Error(ErrorTypes.EntityNotFound);
+    if (!result) throw new Error(ErrorTypes.InvalidMongoId);
 
     return result;
   }
