@@ -41,4 +41,13 @@ export default class MotorcycleService implements IService<IMotorcycle> {
 
     return result;
   }
+
+  // Requisito 23:
+  public async delete(_id: string): Promise<IMotorcycle> {
+    const result = await this._model.delete(_id);
+    
+    if (!result) throw new Error(ErrorTypes.EntityNotFound);
+
+    return result;
+  }
 }

@@ -24,11 +24,13 @@ export default abstract class MongoModel<T> implements IModel<T> {
     return this._model.findOne({ _id });
   }
 
+  // Requisito 13:
   public async update(_id: string, obj: T): Promise<T | null> {
     if (!isValidObjectId(_id)) throw new Error('InvalidMongoId');
     return this._model.findByIdAndUpdate({ _id, obj });
   }
 
+  // Requisito 17:
   public async delete(_id:string): Promise<T | null> {
     if (!isValidObjectId(_id)) throw new Error('InvalidMongoId');
     return this._model.findByIdAndDelete({ _id });

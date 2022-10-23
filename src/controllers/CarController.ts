@@ -60,4 +60,18 @@ export default class CarsController {
       next(error);
     }
   }
+
+  // Requisito 17:
+  public async delete(
+    req: Request,
+    res: Response<ICar>,
+    next: NextFunction,
+  ) {
+    try {
+      const result = await this._service.delete(req.params.id);
+      return res.status(204).json(result);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
