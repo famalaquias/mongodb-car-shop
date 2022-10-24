@@ -11,7 +11,7 @@ const motorcycleControllers = new MotorcycleControllers(motorcycleServices);
 
 MotorcycleRoute.post('/motorcycles', (req, res) => motorcycleControllers.create(req, res));
 MotorcycleRoute.get('/motorcycles', (req, res) => motorcycleControllers.read(req, res));
-MotorcycleRoute.get('/id', (req, res) => motorcycleControllers.readOne(req, res));
+MotorcycleRoute.get('/motorcycles/id', (req, res) => motorcycleControllers.readOne(req, res));
 MotorcycleRoute.put('/motorcycles/id', (req, res) => motorcycleControllers.update(req, res));
 MotorcycleRoute.delete('/motorcycles/id', (req, res) => motorcycleControllers.delete(req, res));
 

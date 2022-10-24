@@ -23,4 +23,14 @@ doorsQty: 2,
 seatsQty: 2,
 };
 
-export { carId, carMock, carMockWithId };
+const carMockUpdate: unknown = {
+  model: 'Ferrari',
+  year: 2020,
+  color: 'red',
+  status: true,
+  buyValue: 50000000,
+  doorsQty: 2,
+  seatsQty: 2,
+};
+
+export { carId, carMock, carMockWithId, carMockUpdate };

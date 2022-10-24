@@ -46,7 +46,7 @@ export default class MotorcycleService implements IService<IMotorcycle> {
   public async delete(_id: string): Promise<IMotorcycle> {
     const result = await this._model.delete(_id);
     
-    if (!result) throw new Error(ErrorTypes.InvalidMongoId);
+    if (!result) throw new Error(ErrorTypes.EntityNotFound);
 
     return result;
   }
