@@ -1,4 +1,4 @@
-# MongoDB Car Shop :shopping_cart:
+# MongoDB Car Shop :seedling: :shopping_cart:
 
 ![MONGODB](https://user-images.githubusercontent.com/98343640/197544382-e85924e8-7cce-45cf-91c7-d3aea915f4d6.png)
 
