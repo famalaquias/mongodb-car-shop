@@ -51,11 +51,11 @@ git clone git@github.com:famalaquias/mongodb-car-shop.git && cd mongodb-car-shop
     <strong>Executando o MongoDB localmente</strong>
   </summary><br>
 
-  ### 1 - Entre na pasta do projeto e utilize o comando `npm install` para instalar as dependências necessárias.
+  1 - Entre na pasta do projeto e utilize o comando `npm install` para instalar as dependências necessárias.
   
-  ### 2 - Coloque a URI do MongoDB no arquivo `./src/models/connection.ts` na variável `MONGO_DB_URL`.
+  2 - Coloque a URI do MongoDB no arquivo `./src/models/connection.ts` na variável `MONGO_DB_URL`.
   
-  ### 3 - Utilize o comando `npm run dev` para inicializar a API.
+  3 - Utilize o comando `npm run dev` para inicializar a API.
 </details>
 
 <details>
@@ -63,13 +63,13 @@ git clone git@github.com:famalaquias/mongodb-car-shop.git && cd mongodb-car-shop
     <strong>Executando o MongoDB via Docker</strong>
   </summary><br>
 
-   ### 1 - Entre na pasta do projeto e utilize o comando `docker-compose up -d`. 
+   1 - Entre na pasta do projeto e utilize o comando `docker-compose up -d`. 
    
-   ### 2 - Entre no terminal do container através do comando `docker exec -it car_shop bash`.
+   2 - Entre no terminal do container através do comando `docker exec -it car_shop bash`.
    
-   ### 3 - Instale as dependências necessárias através do comando `npm install`.
+   3 - Instale as dependências necessárias através do comando `npm install`.
    
-   ### 4 - Utilize o comando `npm run dev` para inicializar a API.
+   4 - Utilize o comando `npm run dev` para inicializar a API.
 </details>
 
 
